@@ -1,3 +1,11 @@
+const buttons =document.querySelectorAll("button");
+buttons.forEach(button=>{
+  button.addEventListener("click",e=>{
+    play(computerPlay(),e.target.textContent);
+  })
+})
+
+
 let computerPlay=()=>{
     let ar=["rock","paper","scissors"]
     let x =Math.floor(Math.random()*3);
@@ -58,7 +66,7 @@ let play=(computerSelection,playerSelection)=>{
 let game=()=>{
   let playerScore=0;
   let computerScore=0;
-  for(let i=0;i<5;i++){
+  // for(let i=0;i<5;i++){
     let result=play(computerPlay(),playerSelectionn())
     console.log(result);
     if(result.includes("win")){
@@ -66,7 +74,7 @@ let game=()=>{
     }else if(result.includes("lose")){
       computerScore++;
     }
-  }
+  // }
   if(playerScore>computerScore){
     console.log("Player wins");
   }else if(playerScore<computerScore){
@@ -75,4 +83,4 @@ let game=()=>{
     console.log("Draw");
   }
 }
-game();
+// game();
